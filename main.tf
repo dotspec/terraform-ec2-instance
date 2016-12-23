@@ -1,5 +1,5 @@
 provider "aws" {
-  region = "us-gov-west-1"
+  region = "${var.aws_region}"
 }
 
 variable "aws_region"                 { }
@@ -7,7 +7,7 @@ variable "ec2_instance_ami"           { }
 variable "ec2_availability_zone"      { }
 variable "ec2_instance_type"          { }
 variable "ec2_key_name"               { }
-variable "ec2_security_groups"        { }
+variable "ec2_security_groups"        { type = "list" }
 variable "ec2_subnet_id"              { }
 variable "ec2_source_dest_check"      { default = true }
 variable "ec2_termination_protection" { default = true }
