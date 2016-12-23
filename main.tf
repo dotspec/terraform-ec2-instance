@@ -2,7 +2,7 @@ provider "aws" {
   region = "us-gov-west-1"
 }
 
-variable "aws_region"                 { default = "us-gov-west-1" }
+variable "aws_region"                 { }
 variable "ec2_instance_ami"           { }
 variable "ec2_availability_zone"      { }
 variable "ec2_instance_type"          { }
