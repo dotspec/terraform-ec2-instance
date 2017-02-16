@@ -1,4 +1,6 @@
 variable "aws_region" { type = "string" }
+variable "access_key" { type = "string" }
+variable "secret_key" { type = "string" }
 variable "ec2_instance_ami" { type = "string" }
 variable "ec2_availability_zone" { type = "string" }
 variable "ec2_instance_type" { type = "string" }
@@ -7,6 +9,12 @@ variable "ec2_security_groups" { type = "list" }
 variable "ec2_subnet_id" { type = "string" }
 variable "ec2_source_dest_check" { default = true }
 variable "ec2_termination_protection" { default = true }
+
+provider "aws" {
+  access_key = "${var.access_key}"
+  secret_key = "${var.secret_key}"
+  region = "${var.aws_region}"
+}
 
 resource "aws_instance" "ec2_instance" {
   ami                     = "${var.ec2_instance_ami}"
