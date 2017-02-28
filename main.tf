@@ -26,5 +26,5 @@ resource "aws_instance" "ec2_instance" {
   subnet_id               = "${var.ec2_subnet_id}"
   source_dest_check       = "${var.ec2_source_dest_check}"
   disable_api_termination = "${var.ec2_termination_protection}"
-  user-data               = "${var.ec2_user_data}"
+  user_data               = "${var.ec2_user_data}"
 }
